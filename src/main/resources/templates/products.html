@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+	<h1>商品一覧</h1>
+	
+	<div th:if="${error}">
+		<p th:if="${error}"></p>		
+	</div>
+	
+	<form method="post" action="/products">
+		<label>商品名： <input type="text" name="name" required></label>
+		<label>価格： <input type="number" name="price" min="0" required></label>
+		<button type="submit">商品追加</button>
+	</form>
+	
+	<table border="1" cellpadding="6" cellspacing="0">
+        <thead>
+			<tr>
+				<th>ID</th>
+				<th>名前</th>
+				<th>価格</th>
+				<th>削除</th>
+			</tr>
+		</thead>
+		<tbody><tr th:each="product : ${products}">
+			<td th:text="${product.id}">1</td>
+			<td th:text="${product.name}">商品A</td>
+			<td th:text="${product.price}">1000</td>
+			<td>
+				<form th:action="@{/products/{id}(id=${product.id})}" method="post">
+					<input type="hidden" name="_method" value="delete">
+					<button type="submit">削除</button>
+				</form>
+			</td>
+		</tr>
+	</table>
+	<p><a href="/dashboard">ダッシュボードへ</a></p>
+</body>
+</html>
