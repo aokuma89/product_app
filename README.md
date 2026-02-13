@@ -1,7 +1,7 @@
 ## Product App
 React と Supabase を使用した、シンプルかつ高機能な商品管理アプリケーションです。
 
-## 🌟 主な機能
+## 主な機能
 商品一覧表示: 登録された商品をカード形式またはリスト形式で閲覧。
 
 商品管理 (CRUD): 商品の追加、編集、削除機能。
@@ -12,7 +12,7 @@ React と Supabase を使用した、シンプルかつ高機能な商品管理�
 
 型安全: TypeScript による堅牢な開発。
 
-## 🛠 使用技術
+## 使用技術
 フロントエンド: React (Vite), TypeScript
 
 スタイリング: Tailwind CSS
@@ -21,7 +21,7 @@ React と Supabase を使用した、シンプルかつ高機能な商品管理�
 
 アイコン: Lucide React
 
-## 📋 セットアップ
+## セットアップ
 1. リポジトリのクローン
 Bash
 git clone https://github.com/aokuma89/product_app.git
@@ -55,7 +55,7 @@ create policy "Allow public read access" on products for select using (true);
 5. 開発サーバーの起動
 Bash
 npm run dev
-## 🚀 今後のロードマップ
+## 今後のロードマップ
 [ ] 商品画像のアップロード機能 (Supabase Storage)
 
 [ ] カテゴリ別のフィルタリング機能
